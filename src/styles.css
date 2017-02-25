@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("../node_modules/bootstrap/dist/css/bootstrap.css");
+.fundonav {
+    background-color: #404040;
+    border-style: solid;
+    border-width: medium;
+    border-radius: 10px;
+}
+
+.linknav {
+    outline: none;
+}
+
+.card-header {
+    background-color: #A0A0A0;
+}
+
+.card-block {
+    background-color: #F8F8F8;
+}
+
+.btn-secure {
+    color: #fff;
+    background-color: #C6C6C6;
+    border-color: #9A9A9A;
+}
+
+.btn-secure:hover {
+    color: #fff;
+    background-color: #A0A0A0;
+    border-color: #888888;
+}
+
+.btn-secure:focus,
+.btn-secure.focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.3);
+    box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.3);
+}
+
+.btn-secure.disabled,
+.btn-secure:disabled {
+    background-color: #888888;
+    border-color: #888888;
+}
+
+.btn-secure:active,
+.btn-secure.active,
+.show>.btn-secure.dropdown-toggle {
+    color: #fff;
+    background-color: #C6C6C6;
+    background-image: none;
+    border-color: #888888;
+}
+
+a.lista:link,
+a.lista:visited {
+    text-decoration: none;
+    color: #4F4F4F;
+}
+
+a.lista:hover {
+    text-decoration: none;
+    color: black;
+}
+
+a.lista:active {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-item {
+    background-color: #F8F8F8;
+    color: #4F4F4F;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: black;
+    background-color: #EDEDED;
+    border-color: #CCCCCC;
+}
