@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClienteService } from './../cliente.service';
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Cliente } from './../cliente';;
 import { Subscription } from 'rxjs/Rx';
 
@@ -9,10 +9,10 @@ import { Subscription } from 'rxjs/Rx';
   templateUrl: './cliente-detalhe.component.html',
   styleUrls: ['./cliente-detalhe.component.css']
 })
-export class ClienteDetalheComponent implements OnInit {
+export class ClienteDetalheComponent implements OnInit, OnDestroy {
   
   inscricao: Subscription;
-  cliente: Cliente;
+  cliente: any;
   id: number;
 
   constructor(
@@ -21,16 +21,26 @@ export class ClienteDetalheComponent implements OnInit {
     private router: Router
   ) { }
 
+    excluiCliente(){
+      this.clienteService.excluiCliente(this.cliente);
+      this.router.navigate(['/cliente']);
+  }
+
   ngOnInit() {
     this.inscricao = this.route.params.subscribe(
       (params:any) => {
         let id = params['id'];
         this.cliente = this.clienteService.consultaCliente(id);
-      }
-);
-    
 
+
+      });
+   
   
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
+    
   }
 
 

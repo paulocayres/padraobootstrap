@@ -80,3 +80,10 @@ a.lista:active {
     background-color: #EDEDED;
     border-color: #CCCCCC;
 }
+
+.form-control:focus {
+    color: #464a4c;
+    background-color: #fff;
+    border-color: #464a4c;
+    outline: none;
+}

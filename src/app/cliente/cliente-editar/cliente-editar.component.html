@@ -1,0 +1,15 @@
+<div class="card">
+    <div class="card-header">
+        Formulário de Cliente:
+    </div>
+    <div class="card-block">
+        <label for="id" class="control-label">Usuário:</label>
+        <input type="text" [(ngModel)]="cliente.id" class="form-control" id="id" placeholder="ID do Usuário">
+        <label for="nome" class="control-label">Usuário:</label>
+        <input type="text" [(ngModel)]="cliente.nome" class="form-control" id="nome" placeholder="Nome do Usuário">
+        <label for="email" class="control-label">Usuário:</label>
+        <input type="text" [(ngModel)]="cliente.email" class="form-control" id="email" placeholder="Email do Usuário">
+        <br>
+        <button type="button" (click)="alterarCliente(cliente)" class="btn  btn-secure">Alterar</button>
+    </div>
+</div>

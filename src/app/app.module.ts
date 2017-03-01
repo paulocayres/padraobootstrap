@@ -19,6 +19,7 @@ import { SairComponent } from './sair/sair.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { SairComponent } from './sair/sair.component';
     HomeComponent,
     //ClienteComponent,
     SairComponent
+
   ],
   imports: [
     BrowserModule,

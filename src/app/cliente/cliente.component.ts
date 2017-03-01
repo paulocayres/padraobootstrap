@@ -1,5 +1,6 @@
 import { ClienteService } from './cliente.service';
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { Cliente } from './cliente';
 

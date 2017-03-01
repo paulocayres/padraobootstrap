@@ -7,4 +7,10 @@
         <li class="list-group-item">Nome do Cliente: {{cliente.nome}}</li>
         <li class="list-group-item">Email do Cliente: {{cliente.email}}</li>
     </ul>
+
+    <div class="card-block">
+        <button type="button" [routerLink]="['editar']" class="btn  btn-secure">Alterar</button>
+        <button type="button" (click)="excluiCliente()" class="btn  btn-secure">Excluir</button>
+    </div>
+
 </div>
