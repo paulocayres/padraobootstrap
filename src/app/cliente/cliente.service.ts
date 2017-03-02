@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class ClienteService {
-  i: number;
+  //i: number;
   clientes: Cliente[]=[
     {id: 1, nome: "Cliente01", email: "cliente01@email.com"},
     {id: 2, nome: "Cliente02", email: "cliente02@email.com"},
@@ -14,11 +14,11 @@ export class ClienteService {
 
   constructor() { }
 
-  listaClientes(){
+  listarClientes(){
     return this.clientes;
   }
 
-  consultaCliente(id: number){
+  consultarCliente(id: number){
     
   //return this.clientes[id-1];
     for (var index = 0; index <= this.clientes.length; index++) {
@@ -31,18 +31,25 @@ export class ClienteService {
 
 
 
-  excluiCliente(cliente: Cliente){
+  excluirCliente(cliente: Cliente){
     let indice = this.clientes.indexOf(cliente);
     this.clientes.splice(indice,1);
   }
 
 
 
-  alteraCliente(cliente: Cliente, indice: number){
+  alterarCliente(cliente: Cliente, indice: number){
 
-    this.clientes[indice].id = cliente.id;
-    this.clientes[indice].nome = cliente.nome;
-    this.clientes[indice].email = cliente.email;
+    if (cliente.id == undefined || cliente.nome == "" || cliente.email == ""){
+      console.log("Campos do Cliente não definidos.")
+    } else {
+      this.clientes[indice].id = cliente.id;
+      this.clientes[indice].nome = cliente.nome;
+      this.clientes[indice].email = cliente.email;
+
+      console.log(this.listarClientes());
+    }
+
     
   }
 

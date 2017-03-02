@@ -18,7 +18,7 @@ export class ClienteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.clientes = this.clienteService.listaClientes();
+    this.clientes = this.clienteService.listarClientes();
   }
 
 }

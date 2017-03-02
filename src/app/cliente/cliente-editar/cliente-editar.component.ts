@@ -11,7 +11,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class ClienteEditarComponent implements OnInit, OnDestroy {
 
-  cliente: any;
+  cliente: Cliente;
   inscricao: Subscription;
   indice: number;
 
@@ -25,10 +25,10 @@ export class ClienteEditarComponent implements OnInit, OnDestroy {
       this.inscricao = this.route.params.subscribe(
       (params:any) => {
         let id = params['id'];
-        this.cliente = this.clienteService.consultaCliente(id);
+        this.cliente = this.clienteService.consultarCliente(id);
 
         if (this.cliente === null){
-          this.cliente = {};
+          this.cliente = {id:null,nome:"",email:""};
         }
       });
 
@@ -36,8 +36,8 @@ export class ClienteEditarComponent implements OnInit, OnDestroy {
 
   }
 
-  salvarCliente(cliente: Cliente){
-    this.clienteService.alteraCliente(cliente,this.indice);
+  alterarCliente(cliente: Cliente){
+    this.clienteService.alterarCliente(cliente,this.indice);
   }
 
   ngOnDestroy() {

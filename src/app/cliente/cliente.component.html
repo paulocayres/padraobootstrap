@@ -4,10 +4,8 @@
             <div class="card-header">
                 Lista de Clientes:
             </div>
-            <a class="linknav lista" href="" *ngFor="let cliente of clientes" onclick="return false;">
-                <li class="list-group-item" [routerLink]="[cliente.id]" routerLinkActive="active">
-                    CPF: {{cliente.id}} - Nome: {{cliente.nome}}
-                </li>
+            <a class="linknav lista list-group-item" [routerLink]="[cliente.id]" routerLinkActive="active" *ngFor="let cliente of clientes">
+                CPF: {{cliente.id}} - Nome: {{cliente.nome}}
             </a>
             <div class="card-block">
                 <button type="button" [routerLink]="['novo']" class="btn  btn-secure">Incluir</button>

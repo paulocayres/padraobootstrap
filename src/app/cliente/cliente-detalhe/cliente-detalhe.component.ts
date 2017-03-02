@@ -22,7 +22,7 @@ export class ClienteDetalheComponent implements OnInit, OnDestroy {
   ) { }
 
     excluiCliente(){
-      this.clienteService.excluiCliente(this.cliente);
+      this.clienteService.excluirCliente(this.cliente);
       this.router.navigate(['/cliente']);
   }
 
@@ -30,7 +30,7 @@ export class ClienteDetalheComponent implements OnInit, OnDestroy {
     this.inscricao = this.route.params.subscribe(
       (params:any) => {
         let id = params['id'];
-        this.cliente = this.clienteService.consultaCliente(id);
+        this.cliente = this.clienteService.consultarCliente(id);
 
 
       });
