@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { Cliente } from './cliente';
-import { Injectable } from '@angular/core';
+import { Injectable, ModuleWithProviders } from '@angular/core';
 
 @Injectable()
 export class ClienteService {
@@ -12,10 +12,29 @@ export class ClienteService {
 
   ];
 
+  clientesId: Cliente[] = [];
+
+  re: RegExp;
+
   constructor() { }
 
   listarClientes(){
     return this.clientes;
+  }
+
+
+
+    listarClienteId(id: number){
+    
+    this.clientesId = [];
+  
+    for (var index = 0; index <= this.clientes.length -1 ; index++) {
+      if (this.clientes[index].id.toLocaleString().search(id.toLocaleString()) != -1){
+        this.clientesId.push(this.clientes[index]);
+      }
+    }
+
+    return this.clientesId;
   }
 
   consultarCliente(id: number){
