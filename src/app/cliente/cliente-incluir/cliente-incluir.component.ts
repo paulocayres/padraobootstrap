@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ClienteService } from './../cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
@@ -14,16 +15,18 @@ export class ClienteIncluirComponent implements OnInit {
   
 
   constructor(
-        private clienteService: ClienteService
+        private clienteService: ClienteService,
+        private router: Router
   ) { }
 
   ngOnInit() {
   }
 
-  incluirCliente(cliente: Cliente){
+  incluirCliente(){
   
     //console.log(cliente:Cliente)  
-    this.clienteService.incluirCliente(cliente);
+    this.clienteService.incluirCliente(this.cliente);
+    this.router.navigate(['/cliente']);
 
   }
 

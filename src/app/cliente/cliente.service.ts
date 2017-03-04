@@ -78,6 +78,7 @@ export class ClienteService {
       console.log("Cliente Não definido")
     } else {
           this.clientes.push(cliente);
+          this.clientesId.push(cliente);
     }
 
     

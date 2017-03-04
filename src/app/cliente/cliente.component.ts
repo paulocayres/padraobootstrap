@@ -26,11 +26,10 @@ export class ClienteComponent implements OnInit {
     this.clientes = this.clienteService.listarClientes();
   }
 
+
   consultarCliente(id: number){
     this.clienteService.consultarCliente(id);
     this.router.navigate(['/cliente', id])
-
-
   }
 
   listarClienteId(){
