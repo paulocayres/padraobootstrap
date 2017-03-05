@@ -14,7 +14,6 @@ export class ClienteService {
 
   clientesId: Cliente[] = [];
 
-  re: RegExp;
 
   constructor() { }
 
