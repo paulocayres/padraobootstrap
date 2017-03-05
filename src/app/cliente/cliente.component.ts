@@ -24,7 +24,11 @@ export class ClienteComponent implements OnInit {
 
   ngOnInit() {
     this.clientes = this.clienteService.listarClientes();
-  }
+    this.clienteService.eventoCliente.subscribe(
+      clientes => this.clientes = clientes,
+      
+    );
+    }
 
 
   consultarCliente(id: number){

@@ -38,6 +38,7 @@ export class ClienteEditarComponent implements OnInit, OnDestroy {
 
   alterarCliente(cliente: Cliente){
     this.clienteService.alterarCliente(cliente,this.indice);
+    this.router.navigate(['/cliente']);
   }
 
   ngOnDestroy() {

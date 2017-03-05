@@ -1,6 +1,6 @@
 import { element } from 'protractor';
 import { Cliente } from './cliente';
-import { Injectable, ModuleWithProviders } from '@angular/core';
+import { Injectable, ModuleWithProviders, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class ClienteService {
@@ -13,6 +13,8 @@ export class ClienteService {
   ];
 
   clientesId: Cliente[] = [];
+
+  eventoCliente = new EventEmitter<Cliente[]>();
 
 
   constructor() { }
@@ -52,6 +54,7 @@ export class ClienteService {
   excluirCliente(cliente: Cliente){
     let indice = this.clientes.indexOf(cliente);
     this.clientes.splice(indice,1);
+    this.eventoCliente.emit(this.clientes);
   }
 
 
@@ -64,7 +67,7 @@ export class ClienteService {
       this.clientes[indice].id = cliente.id;
       this.clientes[indice].nome = cliente.nome;
       this.clientes[indice].email = cliente.email;
-
+      this.eventoCliente.emit(this.clientes);
       console.log(this.listarClientes());
     }
 
@@ -77,7 +80,7 @@ export class ClienteService {
       console.log("Cliente Não definido")
     } else {
           this.clientes.push(cliente);
-          this.clientesId.push(cliente);
+          this.eventoCliente.emit(this.clientes);
     }
 
     
