@@ -35,7 +35,7 @@ import { SairComponent } from './sair/sair.component';
     HttpModule,
     //MaterializeModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule.forRoot()
     //ClienteModule
   ],
   providers: [

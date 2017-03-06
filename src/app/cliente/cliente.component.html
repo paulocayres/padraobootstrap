@@ -23,6 +23,11 @@
             </a>
             <div class="card-block">
                 <button type="button" [routerLink]="['novo']" class="btn  btn-secure">Incluir</button>
+                <button type="button" (click)="listarCliente()" class="btn  btn-secure">Listar</button>
+            </div>
+
+            <div class="card-block">
+                <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
             </div>
         </div>
     </div>

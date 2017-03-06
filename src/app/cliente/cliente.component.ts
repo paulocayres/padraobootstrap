@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { ClienteService } from './cliente.service';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {NgbPaginationModule, NgbPagination, NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { Cliente } from './cliente';
 
@@ -15,7 +16,9 @@ export class ClienteComponent implements OnInit {
   clientes: Cliente[]=[];
   id: number;
 
-  number
+  pageSize: number = 10;
+  collectionSize: number;
+  maxSize: number;
 
   constructor(
     private clienteService: ClienteService,
@@ -26,6 +29,8 @@ export class ClienteComponent implements OnInit {
     this.clientes = this.clienteService.listarClientes();
     this.clienteService.eventoCliente.subscribe(
       clientes => this.clientes = clientes,
+      this.collectionSize = this.clientes.length,
+      this.maxSize = this.clientes.length/10
       
     );
     }
@@ -38,6 +43,10 @@ export class ClienteComponent implements OnInit {
 
   listarClienteId(){
     this.clientes = this.clienteService.listarClienteId(this.id);
+  }
+
+  listarCliente(){
+    this.clientes = this.clienteService.listarClientes();
   }
 
 }
