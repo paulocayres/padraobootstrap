@@ -19,7 +19,7 @@ import { ClienteService } from './cliente.service';
         CommonModule,
         ClienteRoutingModule,
         FormsModule,
-        NgbModule.forRoot()
+        NgbModule
         ],
     exports: [],
     declarations: [
