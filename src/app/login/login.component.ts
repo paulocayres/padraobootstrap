@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  private usuario: Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
   label: string = '';
   
   constructor(

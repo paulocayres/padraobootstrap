@@ -24,14 +24,17 @@
         ],
         "scripts": [
             "../node_modules/jquery/dist/jquery.js",
-            "../node_modules/@ng-bootstrap/ng-bootstrap/bundles/ng-bootstrap.js",
+            "../node_modules/bootstrap/dist/js/bootstrap.js",
             "../node_modules/tether/dist/js/tether.js"
         ],
+
+        "environmentSource": "environments/environment.ts",
         "environments": {
-            "source": "environments/environment.ts",
-            "dev": "environments/environment.ts",
-            "prod": "environments/environment.prod.ts"
+          "dev": "environments/environment.ts",
+          "prod": "environments/environment.prod.ts"
         }
+
+        
     }],
     "e2e": {
         "protractor": {

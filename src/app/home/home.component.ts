@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  private seguro = require("./images/Desktop.jpg");
+  seguro = require("./images/Desktop.jpg");
 
   constructor() { }
 
